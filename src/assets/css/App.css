@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+@import 'bootstrap.min.css';
+
+.row.mb2 {
+	position: relative;  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn {
+width: 100%;
+margin: 25px 15px;
+background-color: #303030;
+border: 1px solid #444;
+color: #fff !important;
+box-shadow: none;
+cursor: auto;
+transition: .3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.btn:focus {
+box-shadow: none;
+}
+
+.btn:active {
+border: 1px solid #666 !important;
+}
+
+.btn-next {
+background-color: #00bc8c;
+cursor: pointer;  
+}
+
+.btn-next:hover {
+background-color: #00EFB2;
+}
+
+.audio-player {
+	margin: 10px 40px 8px 0;
+	width: 100%;
+	min-width: 100px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .controls {
+	display: flex;
+	align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .playback-button {
+	transition: 0.2s;
+	width: 40px;
+	height: 40px;
+	border: 2px solid #00bc8c;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	margin-right: 20px;
+	margin-bottom: 12px;
+	cursor: pointer;
   }
-}
+  
+  .playback-button svg {
+	transition: 0.2s;
+	width: 18px;
+	height: 18px;
+	color: #54b1c1;
+  }
+  
+  .playback-button:hover svg {
+	width: 18px;
+	height: 18px;
+	color: #00bc8c;
+	transform: scale(1.03);
+  }
+  
+  .timebar {
+	flex: 1 1;
+	margin-top: 12px;
+  }
+  
+  .timebar-bar {
+	height: 4px;
+  }
+  
+  .timebar-circle {
+	background-color: grey;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0px;
+	transform: translate(-50%, calc(-50% + 2px));
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+  }
+  
+  .timebar-time-info {
+	margin-top: 8px;
+	font-size: 11px;
+	color: lightgrey;
+	display: flex;
+	justify-content: space-between;
+  }
