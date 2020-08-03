@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../assets/css/header.css';
 
-function Header() {
+function Header(props) {
   return (
 	<header className="d-flex">
 		<div className="top-panel d-flex">
 			<div className="logo"></div>
-			<h5>Score: 
-				<span className="score">0</span>
+			<button onClick={props.funcScore}> </button><h5>Score: 
+				<span className="score">{ props.score }</span>
 			</h5>
 		</div>
 		<ul className="pagination">
