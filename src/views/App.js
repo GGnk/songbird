@@ -16,23 +16,30 @@ function App() {
 		score = 0,
 		setScore,
 		// step = 0,
-		gameEnd = false,
 	 ] = useState(0);
 	
-	const gameover = gameEnd ? <GameOver/> : '';
+   const [gameEnd, setGameEnd] = useState(false);
 	
-	return (	
-		<>
-			<Header score={ score } funcScore={() => setScore(score +  1)}/>
-			<Question/>
-			<div className="row mb2">
-				<Answers/>
-				<Description/>
-				<button className="btn">Next Level</button>
-			</div>
-			{ gameover }
-		</>
-	);
+   if(gameEnd) {
+     return (
+       <>
+         <Header score={ score } funcScore={() => setScore(score +  1)}/>
+         <GameOver/>
+       </>
+     )
+   } else {
+     return (
+       <>
+         <Header score={ score } funcScore={() => setScore(score +  1)}/>
+         <Question/>
+         <div className="row mb2">
+           <Answers/>
+           <Description/>
+           <button className="btn">Next Level</button>
+         </div>
+       </>
+     )
+   }
 }
 
 export default App;
