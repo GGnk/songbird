@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/header';
 import Question from '../components/blockQuestion';
 import Answers from '../components/blockAnswers';
@@ -6,31 +6,33 @@ import Description from '../components/blockDescription';
 import GameOver from '../components/blockGameOver';
 import '../assets/css/App.css';
 
+
 function App() {
-	const [
-		// random = 0,
-		// page = 0,
-		// id = 0,
-		// select = false,
-		// win = false,
-		score = 0,
-		setScore,
-		// step = 0,
-	 ] = useState(0);
-	
-   const [gameEnd, setGameEnd] = useState(false);
+	const [score, setScore] = useState(0);
+	const [gameEnd, setGameEnd] = useState(false);
+	const [page, setPage] = useState(0);
+	const [random, setRandom] = useState(0);
+	const [select, setSelect] = useState(false);
+	const [step, setStep] = useState(0);
+	const [id, setId] = useState(0);
+	const [win, setWin] = useState(false);
+
+	useEffect(() => {
+		console.log(score)
+	})
+   const header = <Header score={ score } page={ page }/>
 	
    if(gameEnd) {
      return (
        <>
-         <Header score={ score } funcScore={() => setScore(score +  1)}/>
+         {header}
          <GameOver/>
        </>
      )
    } else {
      return (
        <>
-         <Header score={ score } funcScore={() => setScore(score +  1)}/>
+         {header}
          <Question/>
          <div className="row mb2">
            <Answers/>

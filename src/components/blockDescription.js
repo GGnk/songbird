@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/css/description.css';
 
-function App() {
+function Description() {
 	return (
 		<div className="col-md-6">
 			<div className="bird-details card">
@@ -46,4 +46,4 @@ function App() {
 	);
 }
 
-export default App;
+export default Description;
