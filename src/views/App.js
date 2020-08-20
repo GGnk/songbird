@@ -7,7 +7,7 @@ import GameOver from '../components/blockGameOver';
 import '../assets/css/App.css';
 
 
-function App() {
+const App = () => {
 	const [score, setScore] = useState(0);
 	const [gameEnd, setGameEnd] = useState(false);
 	const [page, setPage] = useState(0);
