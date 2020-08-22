@@ -19,8 +19,6 @@ const Game = (props) => {
       }
     };
 
-    const info = [ 'background: green', 'color: white', 'display: block', 'text-align: center'].join(';');
-
     const selectedBird = props.selectedBird;
     const buttonClassname = !props.guessed ? 'btn' : 'btn btn-next';
     const visibility = !props.gameOver ? '' : 'none';
