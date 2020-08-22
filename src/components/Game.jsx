@@ -6,7 +6,6 @@ import errorSound from '../assets/sounds/error.wav'
 import sound from '../js/sound';
 
 const Game = (props) => {
-    console.log('Game-Props', props);
     const checkAnswer = (selection) => {
       if (props.secretBird.name === selection) {
         const secretPlayer = document.getElementById('secretPlayer');
